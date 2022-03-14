@@ -59,5 +59,18 @@ namespace User_Registration_Test
             else
                 return "Entry is not successful";
         }
+
+        public string check_MultipleEntries_Email(string email1, string email2, string email3, string email4)
+        {
+            UserRegPattern userRegPattern = new UserRegPattern();
+            bool emailForEntry1 = userRegPattern.ValidateEmail(email1);
+            bool emailForEntry2 = userRegPattern.ValidateEmail(email2);
+            bool emailForEntry3 = userRegPattern.ValidateEmail(email3);
+            bool emailForEntry4 = userRegPattern.ValidateEmail(email4);
+            if (emailForEntry1 && emailForEntry2 && emailForEntry3 && emailForEntry4)
+                return "Entry is successful";
+            else
+                return "Entry is not successful";
+        }
     }
 }
