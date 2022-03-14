@@ -11,8 +11,8 @@ namespace User_Registration_Test
        public static void Main(string[] args)
         {
             UserRegPattern userRegPattern = new UserRegPattern();
-            //checking firstname
-            Console.WriteLine("MS test");
+            
+            Console.WriteLine("Welcome to User Registration program");
 
 
         }
