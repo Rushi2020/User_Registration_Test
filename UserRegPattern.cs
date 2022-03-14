@@ -17,6 +17,18 @@ namespace User_Registration_Test
         public static string Email2 = "^[a-z]{3,}(([.|+]{1})?([-]{1})?[0-9]{1,})?@[a-z0-9]{1,}.[a-z]{3}(.[a-z]{2,4})?$";
 
 
+        public Func<string, string> LValidateFirstName = data => Regex.IsMatch(data, FirstName) ? "valid firstName" : throw new CustomException(CustomException.ExceptionType.INVALID_FIRSTNAME, "invalid firstName");
+        public Func<string, string> LValidateLastName = data => Regex.IsMatch(data, LastName) ? "valid lastName" : throw new CustomException(CustomException.ExceptionType.INVALID_LASTNAME, "invalid lastName");
+        public Func<string, string> LValidateEmail = data => Regex.IsMatch(data, Email) ? "valid email" : throw new CustomException(CustomException.ExceptionType.INVALID_EMAIL, "invalid email");
+        public Func<string, string> LValidateMobileNo = data => Regex.IsMatch(data, MobileNo) ? "valid mobileNo" : throw new CustomException(CustomException.ExceptionType.INVALID_MOBILE_NO, "invalid mobileNo");
+        public Func<string, string> LValidatePassword = data => Regex.IsMatch(data, Password) ? "valid password" : throw new CustomException(CustomException.ExceptionType.INVALID_PASSWORD, "invalid password");
+
+
+
+
+
+
+
         public bool ValidateFirstName(string data)
         {     //first name validation
                 bool result = Regex.IsMatch(data, FirstName) ? true : false;
@@ -49,5 +61,6 @@ namespace User_Registration_Test
                 bool result = Regex.IsMatch(data, Password) ? true : false;
                 return result;
         }
+
     }
 }
